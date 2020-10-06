@@ -20,6 +20,11 @@ It's a binary classification problem with not too much data. Lots of categorical
 Load test and training dataset from test.csv and train.csv.
 <img src="images/train.PNG">
 
+2. Baseline
+
+Perform minimal data cleaning without EDA or feature engineering, train with vanilla Gradient Boosting Classifier, and predict test data. The final prediction 
+has 77.751% accuracy on Kaggle.
+
 2. Data scrubbing, Exploratory Data Analysis (EDA), and feature engineering
 
 Analyze features individually and in group to obtain the best method to extract data, engineer feature, encode data, 
@@ -119,3 +124,8 @@ Model | Best Kaggle Score (%)
 GradientBoostingClassifier | 75.837
 RandomForestClassifier | 77.511
 XGBoost | 74.880
+
+8. Conclusion
+
+The final predictions after feature engineering and EDA have lower accuracy than baseline. Since the women and children group survival rate is so diverse from male passengers
+group, consider **splitting passengers and trained with different machine learning models** to predict survival rate. Also consider potential overfitting from too much or wrong feature engineering.
