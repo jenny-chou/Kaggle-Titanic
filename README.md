@@ -25,7 +25,7 @@ Load test and training dataset from test.csv and train.csv.
 Perform minimal data cleaning without EDA or feature engineering, train with vanilla Gradient Boosting Classifier, and predict test data. The final prediction 
 has 77.751% accuracy on Kaggle.
 
-2. Data scrubbing, Exploratory Data Analysis (EDA), and feature engineering
+3. Data scrubbing, Exploratory Data Analysis (EDA), and feature engineering
 
 Analyze features individually and in group to obtain the best method to extract data, engineer feature, encode data, 
 and fill missing data. Following are some statistics:
@@ -70,14 +70,14 @@ and fill missing data. Following are some statistics:
 
 <img src="images/correlation_1.PNG">
 
-3. Feature selection
+4. Feature selection
 
 Use ensemble models and Recursive Feature Elimination (REF) methods to rank feature importance with the target, Survived, 
 and discard other less correlated features.
 
 <img src="images/correlation.PNG">
 
-4. Modeling
+5. Modeling
 
 Use default 5-fold straitified cross validate and accuracy to select best model.
 
@@ -115,7 +115,7 @@ Use default 5-fold straitified cross validate and accuracy to select best model.
       
       <img src="images/xgboost.PNG">
 
-7. Deploying
+6. Deploying
 
 Use best model to predict test set and submit to Kaggle, following is final Kaggle test scores:
 
@@ -125,7 +125,7 @@ GradientBoostingClassifier | 75.837
 RandomForestClassifier | 77.511
 XGBoost | 74.880
 
-8. Conclusion
+7. Conclusion
 
 The final predictions after feature engineering and EDA have lower accuracy than baseline. Since the women and children group survival rate is so diverse from male passengers
 group, consider **splitting passengers and trained with different machine learning models** to predict survival rate. Also consider potential overfitting from too much or wrong feature engineering.
