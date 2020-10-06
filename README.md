@@ -8,9 +8,10 @@ It's a binary classification problem with not too much data. Lots of categorical
 - test.csv: test dataset
 - train.csv: training dataset
 - Kaggle_Titanic.ipynb: notebook includes detailed data extraction, data loading, data wrangling, data analysis, feature engineering, and model training.
-- titanic.py: cleaned code with machine learning approach in Python
-- titanic_dnn.py: cleaned code with deep learning approach in Python
-- weights-improvement-###-####.hdf5: weight of the best neural network model with least loss
+- Kaggle_Titanic.py: cleaned code
+- test_pred_GBC.csv: best Kaggle submission using GradientBoostingClassifier model
+- test_pred_RFC.csv: best Kaggle submission using RandomForestClassifier model
+- test_pred_XGB.csv: best Kaggle submission using XGBoost model
 
 
 ## Approach
@@ -85,27 +86,29 @@ Use default 5-fold straitified cross validate and accuracy to select best model.
   
       Model | Validation Accuracy (%)
       ------------ | -------------
-      GradientBoostingRegressor | 84.5119
-      RandomForestRegressor | 83.9538
+      GradientBoostingClassifier | 84.5119
+      RandomForestClassifier | 83.9538
 
   * Try training with standardized data: no obvious improvement
   
       Model | Validation Accuracy (%)
       ------------ | -------------
-      Scaled GradientBoostingRegressor | 84.5119
-      Scaled RandomForestRegressor | 83.9538
+      Scaled GradientBoostingClassifier | 84.5119
+      Scaled RandomForestClassifier | 83.9538
       
   * Tune model: 
   
       Model | Hyperparameter | Best Validation Accuracy (%)
       ------------ | ------------- | -------------
-      GradientBoostingRegressor | n_estimators=90, criterion="friedman_mse", loss="deviance" | 84.8489
-      RandomForestRegressor | criterion="gini", max_depth=8, n_estimators=30 | 85.0799
+      GradientBoostingClassifier | n_estimators=90, criterion="friedman_mse", loss="deviance" | 84.8489
+      RandomForestClassifier | criterion="gini", max_depth=8, n_estimators=30 | 85.0799
       
   * Tune XGBoost model:
       Model | Best Validation Accuracy (%)
       ------------ | -------------
       XGBoost | 93.4795
+      
+      <img src="images/xgboost.PNG">
 
 7. Deploying
 
@@ -113,6 +116,6 @@ Use best model to predict test set and submit to Kaggle, following is final Kagg
 
 Model | Best Kaggle Score (%)
 ------------ | -------------
-GradientBoostingRegressor | 75.837
-RandomForestRegressor | 77.511
+GradientBoostingClassifier | 75.837
+RandomForestClassifier | 77.511
 XGBoost | 74.880
