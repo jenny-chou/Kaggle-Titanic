@@ -107,6 +107,8 @@ Use default 5-fold straitified cross validate and accuracy to select best model.
       Model | Best Validation Accuracy (%)
       ------------ | -------------
       XGBoost | 93.4795
+      
+      <img src="images/xgboost.PNG">
 
 7. Deploying
 
