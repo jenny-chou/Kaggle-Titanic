@@ -1,3 +1,5 @@
+<img src="images/Titanic.jpg" align="center">
+
 # Kaggle-Titanic
 ## Define problem
 This project solves the iconic [Kaggle competition: Titanic](https://www.kaggle.com/c/titanic). Given the Titanic passengers' boarding information such as cabin number, family size, ticket price, and etc., use machine learning to create a model that predicts which passengers survived the Titanic shipwreck in 1912.
